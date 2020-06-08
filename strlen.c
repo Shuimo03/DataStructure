@@ -3,7 +3,7 @@
 
 int main(){
 
-    char str[] = "ABCAC";
+    char str[] = "  ";
     int len = sizeof(str) / sizeof(str[0]);
     int slen = strlen(str);
     printf("len = %d \n", len);
