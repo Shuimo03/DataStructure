@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #define maxSize 100
 
-typdeef struct Sq{
+typedef struct Sq{
     int data[maxSize]; //存放顺序表元素的数组
     int length; //顺序表长度
 } Sqlist;
@@ -34,5 +34,24 @@ int findElem(Sqlist L, int x){
 }
 
 void insertElem(Sqlist &L,int x){
-    int p = findElem(L, x);
+    int p = findElem(L, x); //查找插入的位置
+    for (int i = L.length - 1; i >= p; i--){
+        L.data[i + 1] = L.data[i];
+    }
+    L.data[p] = x;//将x放到插入p的位置上
+    ++(L.length); //因为多了一个元素,所以表长也增加。
 }
+
+//顺序表删除
+int deleteElem(Sqlist &L, int p, int &e){
+    if(p < 0 || p > L.length-1){
+        return 0; //位置不对
+    }
+    e = L.data[p]; // 被删除元素赋值给e
+    for (int i = p; i < L.length - 1; i++){
+        L.data[i] = L.data[i + 1];
+    }
+    --(L.length);
+    return 1;
+}
+

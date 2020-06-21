@@ -2,13 +2,7 @@
 
 int main(){
 
-    int j = 5;
-    int i = 4;
-    if(j % i){
-        printf("1");
-    }
-    else{
-        printf("0");
-    }
+    int _a = 0;
+    printf("%d", _a);
     return 0;
 }
